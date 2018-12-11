@@ -1,0 +1,35 @@
+https://oraclecloud.com:443/crmService/LookupValuesService
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns1:findLookupValues xmlns:ns1="http://xmlns.oracle.com/apps/sales/baseSales/common/salesLookups/salesLookupService/types/">
+         <ns1:findCriteria xmlns:ns2="http://xmlns.oracle.com/adf/svc/types/">
+            <ns2:fetchStart>0</ns2:fetchStart>
+            <ns2:fetchSize>-1</ns2:fetchSize>
+            <ns2:filter>
+               <ns2:group>
+               <ns2:conjunction/>
+                  <ns2:upperCaseCompare>false</ns2:upperCaseCompare>
+                  <ns2:item>
+                     <ns2:conjunction/>
+                     <ns2:upperCaseCompare>false</ns2:upperCaseCompare>
+                     <ns2:attribute>LookupType</ns2:attribute>
+                     <ns2:operator>=</ns2:operator>
+                     <ns2:value>0000</ns2:value>
+                  </ns2:item>
+               </ns2:group>
+            </ns2:filter>
+            <ns2:findAttribute>LookupValuesId</ns2:findAttribute>
+            <ns2:findAttribute>LookupType</ns2:findAttribute>
+            <ns2:findAttribute>LookupCode</ns2:findAttribute>
+            <ns2:findAttribute>CreationDate</ns2:findAttribute>
+            <ns2:findAttribute>Meaning</ns2:findAttribute>
+            <ns2:findAttribute>Description</ns2:findAttribute>
+            <ns2:excludeAttribute>false</ns2:excludeAttribute>
+         </ns1:findCriteria>
+         <ns1:findControl xmlns:ns2="http://xmlns.oracle.com/adf/svc/types/">
+            <ns2:retrieveAllTranslations>true</ns2:retrieveAllTranslations>
+         </ns1:findControl>
+      </ns1:findLookupValues>
+   </soap:Body>
+</soap:Envelope>
